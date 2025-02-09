@@ -1,19 +1,17 @@
 import random
 
-def cekilis_yap():
-    katilimcilar = []
+def cekilis():
+    katılımcılar =[]
     while True:
-        isim = input("Katılımcı ismini gir (bitirmek için 'q' tuşuna bas): ")
-        if isim.lower() == 'q':
+        isim = input("Katılımcı isimlerini girin çıkmak için 'q' basın.")
+        if isim.lower() == "q":
             break
-        katilimcilar.append(isim)
-
-    if not katilimcilar:
-        print("Hiç katılımcı yok, çekiliş yapılamaz!")
-        return
-
-    kazanan = random.choice(katilimcilar)
-    print(f"🎉 Kazanan: {kazanan} 🎉")
-
+        katılımcılar.append(isim)
+        if not katılımcılar: #burada katılımcı listesi boşsa false olur, not false true demek. true olursa kod bloğu çalışır.
+            print("Katıılımcı adı girmeniz gerekiyor.")
+            return
+    kazanan = random.choice(katılımcılar)
+    print(f"Kazanan katılımcı {kazanan}")
+    
 if __name__ == "__main__":
-    cekilis_yap()
+    cekilis()
